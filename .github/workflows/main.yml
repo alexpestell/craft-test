@@ -22,8 +22,6 @@ jobs:
       - uses: webfactory/ssh-agent@v0.1.1
         with:
           ssh-private-key: ${{secrets.SSH_PRIVATE_KEY}}
-      - name: Validate composer
-        run: composer validate
       - name: Install dependencies
         run: composer install --prefer-dist --no-dev --no-progress --no-suggest --optimize-autoloader --ignore-platform-reqs
       - name: Deploy
